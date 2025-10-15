@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import sys
 import os
 
@@ -6,20 +7,23 @@ import os
 
 
 
+##############################
+#     plotting functions     #
+##############################
 
-
-
-
-
-
-
+def simple_plot_with_grid():
+    fig,ax=plt.subplots()
+    ax.grid(alpha=0.5, which='both')
+    ax.grid(which='minor', color='#EEEEEE', linestyle=':', linewidth=1)
+    ax.minorticks_on()
+    ax.set_axisbelow(True)
+    return fig,ax
 
 
 
 ##############################
 #     loading functions      #
 ##############################
-
 
 def load_hamiltonian_walks_contacts():
     tmp_hamiltonian_walks_contacts=np.loadtxt(\
@@ -45,6 +49,24 @@ def load_MJ_tab_6():
         MJ_tab_6[int(tmp_MJ_tab_6[ii,0])-1, int(tmp_MJ_tab_6[ii,1])-1] = tmp_MJ_tab_6[ii,2]
     del tmp_MJ_tab_6
     return MJ_tab_6
+
+def load_hamiltonian_walks_max_abs_GE():
+    tmp_max_abs_GE_data=np.loadtxt(os.path.join("data/structural_and_entanglement_data/","max_abs_GE_data.csv"),delimiter=',')
+    hamiltonian_walks_max_abs_GE=tmp_max_abs_GE_data[:,0]
+    return hamiltonian_walks_max_abs_GE
+
+def load_hamiltonian_walks_maGE_loop_i1_i2():
+    tmp_max_abs_GE_data=np.loadtxt(os.path.join("data/structural_and_entanglement_data/","max_abs_GE_data.csv"),delimiter=',')
+    hamiltonian_walks_i1_i2=np.array(tmp_max_abs_GE_data[:,1:3],dtype=np.int32)
+    return hamiltonian_walks_i1_i2
+
+def load_hamiltonian_walks_maGE_thread_is_N():
+    tmp_max_abs_GE_data=np.loadtxt(os.path.join("data/structural_and_entanglement_data/","max_abs_GE_data.csv"),delimiter=',')
+    hamiltonian_walks_maGE_thread_is_N=np.array(tmp_max_abs_GE_data[:,3],dtype=np.bool_)
+    return hamiltonian_walks_maGE_thread_is_N
+
+
+
 
 
 
