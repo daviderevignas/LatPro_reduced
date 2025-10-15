@@ -3,6 +3,7 @@
 *.DS_Store
 
 # DR:
+compiled_python_modules/
 compiled_python_modules/*
 
 #Visual Studio files
