@@ -23,7 +23,7 @@ import os
 
 def load_hamiltonian_walks_contacts():
     tmp_hamiltonian_walks_contacts=np.loadtxt(\
-        os.path.join("data/","hamiltonian_walks_contacts.csv"),delimiter=',',dtype=np.int16)
+        os.path.join("data/structural_and_entanglement_data/","hamiltonian_walks_contacts.csv"),delimiter=',',dtype=np.int16)
     hamiltonian_walks_contacts=[]
     for row in tmp_hamiltonian_walks_contacts:
         hamiltonian_walks_contacts.append([])
@@ -35,11 +35,11 @@ def load_hamiltonian_walks_contacts():
 
 def load_hamiltonian_walks_bond_vectors():
     hamiltonian_walks_bond_vectors=np.loadtxt(\
-        os.path.join("data/","hamiltonian_walks_bond_vectors.csv"),delimiter=',',dtype=np.int16)
+        os.path.join("data/structural_and_entanglement_data/","hamiltonian_walks_bond_vectors.csv"),delimiter=',',dtype=np.int16)
     return hamiltonian_walks_bond_vectors
 
 def load_MJ_tab_6():
-    tmp_MJ_tab_6=np.loadtxt(os.path.join("data/","MJ_tab_6.csv"),delimiter=',')
+    tmp_MJ_tab_6=np.loadtxt(os.path.join("data/structural_and_entanglement_data/","MJ_tab_6.csv"),delimiter=',')
     MJ_tab_6=np.zeros((20,20))
     for ii in range(len(tmp_MJ_tab_6)):
         MJ_tab_6[int(tmp_MJ_tab_6[ii,0])-1, int(tmp_MJ_tab_6[ii,1])-1] = tmp_MJ_tab_6[ii,2]
