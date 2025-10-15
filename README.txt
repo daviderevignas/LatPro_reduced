@@ -2,7 +2,7 @@
 #                    LatPro_reduced                    #
 ########################################################
 
-This is a reduced and revised version of the code developed in LatPro.
+This is a reduced and revised version of the code previously developed in LatPro.
 
 
 
