@@ -10,11 +10,11 @@ LatPro (Lattice Proteins)
 Important conventions:
 
 
-- directions on the 3D cubic lattice are: 
-    1: 
-    2:
-    3:
-    4:
-    5:
-    6:
+- directions on the 3D cubic lattice are represented as: 
+    1: -x
+    2: +x
+    3: -y
+    4: +y
+    5: -z
+    6: +z
 
