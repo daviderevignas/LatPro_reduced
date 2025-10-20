@@ -21,14 +21,15 @@ subroutine run_refolding_simulations(n_refolding_steps, n_refolding_savings, n_m
 
 
     ! Outputs
-    integer, intent(out) :: all_rep_obtained_natives(n_refolding_savings,n_indepentend_refolding_runs_each_temperature,n_temperatures_to_do)
-    double precision, intent(out) :: all_rep_obtained_energies(n_refolding_savings,&
+    integer, intent(out) :: all_rep_obtained_natives(n_refolding_savings,n_indepentend_refolding_runs_each_temperature, &
+    & n_temperatures_to_do)
+    double precision, intent(out) :: all_rep_obtained_energies(n_refolding_savings, &
     & n_indepentend_refolding_runs_each_temperature,n_temperatures_to_do)
     integer, intent(out) :: all_rep_obtained_distances2(n_refolding_savings, &
     & (n_monomers*(n_monomers-1))/2, n_indepentend_refolding_runs_each_temperature,n_temperatures_to_do)
-    integer, intent(out) :: all_rep_obtained_contacts(n_refolding_savings,2*n_monomers,&
+    integer, intent(out) :: all_rep_obtained_contacts(n_refolding_savings,2*n_monomers, &
     & 2,n_indepentend_refolding_runs_each_temperature,n_temperatures_to_do)
-    integer, intent(out) :: all_rep_obtained_bond_vectors(n_refolding_savings,n_monomers-1,&
+    integer, intent(out) :: all_rep_obtained_bond_vectors(n_refolding_savings,n_monomers-1, &
     & n_indepentend_refolding_runs_each_temperature,n_temperatures_to_do)
 
     ! INTEGER, ALLOCATABLE, INTENT(OUT) :: all_rep_obtained_natives(:,:)
