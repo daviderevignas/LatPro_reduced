@@ -5,6 +5,7 @@
 # DR:
 compiled_python_modules/*
 __pycache__
+wl_results/
 
 #Visual Studio files
 *.[Oo]bj
