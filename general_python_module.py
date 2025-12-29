@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 import os
+import csv
 
 
 
@@ -66,6 +67,50 @@ def load_hamiltonian_walks_maGE_thread_is_N():
     return hamiltonian_walks_maGE_thread_is_N
 
 
+
+
+with open(os.path.join("data/structural_and_entanglement_data/","loops_indexes.csv"), newline='') as f:
+    reader = csv.reader(f)
+    tmp_all_loops_indexes = list(reader)
+tmp_all_loops_indexes=[[int(x) for x in sublist] for sublist in tmp_all_loops_indexes]
+all_loops_indexes=[]
+for row in tmp_all_loops_indexes:
+    all_loops_indexes.append([])
+    for ii in range(len(row)//2):
+        all_loops_indexes[-1].append([row[2*ii],row[2*ii+1]])
+del tmp_all_loops_indexes
+
+with open(os.path.join("data/structural_and_entanglement_data/","N_threads_indexes.csv"), newline='') as f:
+    reader = csv.reader(f)
+    tmp_all_N_threads_indexes = list(reader)
+tmp_all_N_threads_indexes=[[int(x) for x in sublist] for sublist in tmp_all_N_threads_indexes]
+all_N_threads_indexes=[]
+for row in tmp_all_N_threads_indexes:
+    all_N_threads_indexes.append([])
+    for ii in range(len(row)//2):
+        all_N_threads_indexes[-1].append([row[2*ii],row[2*ii+1]])
+del tmp_all_N_threads_indexes
+
+with open(os.path.join("data/structural_and_entanglement_data/","C_threads_indexes.csv"), newline='') as f:
+    reader = csv.reader(f)
+    tmp_all_C_threads_indexes = list(reader)
+tmp_all_C_threads_indexes=[[int(x) for x in sublist] for sublist in tmp_all_C_threads_indexes]
+all_C_threads_indexes=[]
+for row in tmp_all_C_threads_indexes:
+    all_C_threads_indexes.append([])
+    for ii in range(len(row)//2):
+        all_C_threads_indexes[-1].append([row[2*ii],row[2*ii+1]])
+del tmp_all_C_threads_indexes
+
+with open(os.path.join("data/structural_and_entanglement_data/","N_threads_GE.csv"), newline='') as f:
+    reader = csv.reader(f)
+    all_N_threads_GE = list(reader)
+all_N_threads_GE=[[float(x) for x in sublist] for sublist in all_N_threads_GE]
+
+with open(os.path.join("data/structural_and_entanglement_data/","C_threads_GE.csv"), newline='') as f:
+    reader = csv.reader(f)
+    all_C_threads_GE = list(reader)
+all_C_threads_GE=[[float(x) for x in sublist] for sublist in all_C_threads_GE]
 
 
 
